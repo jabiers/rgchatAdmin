@@ -5,7 +5,7 @@ block content
         hgroup(class="title")
             h1 Register.
             h2 Create a new account.
-    
+
         - if ('undefined' !== typeof errors && errors.length)
           ul#errors
             - each error in errors
@@ -17,7 +17,7 @@ block content
                 ol
                     li(class="email")
                         label(for=everyauth.password.loginFormFieldName) Email address
-                        input(type="text", name=everyauth.password.loginFormFieldName, value=userParams[everyauth.password.loginFormFieldName])
+                        input(type="text", name=everyauth.password.loginFormFieldName)
                     li(class="password")
                         label(for="password") Password
                         input(type="password", name=everyauth.password.passwordFormFieldName)
@@ -26,8 +26,8 @@ block content
                         input(type="password", name="confirmPassword")
                     li(class="recaptcha")
                         div(class="message-info")
-                            p 
-                                | To enable CAPTCHA verification, register for reCAPTCHA keys at 
+                            p
+                                | To enable CAPTCHA verification, register for reCAPTCHA keys at
                                 a(href="http://recaptcha.net", target="_blank", title="register for a captcha") reCAPTCHA.net
                                 |. Rename settings.example.json to settings.json (if you have not done so already), and replace 'publicKey'
                                 | with your public key, and 'privateKey' with your private key.  Finally, uncomment '!= recaptcha_form' under this paragraph.
@@ -35,7 +35,7 @@ block content
 
                 input(type="submit", value="Register")
                 p
-                    | Did you know you can use other services to log in to this site? 
+                    | Did you know you can use other services to log in to this site?
                     | Click
                     a(href="/login") here
                     | to log in using one of the supported services.

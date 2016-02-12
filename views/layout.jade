@@ -3,57 +3,51 @@ html
   head
     - if (typeof(title) == 'undefined')
         title Express Starter Template
-    - else 
+    - else
         title= title
-    
+
     // include default stylesheets and any view stylesheets
     link(rel='stylesheet', href='/stylesheets/style.css')
-    
+
     // include default scripts and any view scripts
     script(src='/javascripts/jquery-1.8.3.min.js')
     script(src='/javascripts/modernizr.js')
-    
+
     block head
-    
-  body   
+
+  body
     header
       div(class='content-wrapper')
         div(class="float-left")
           p(class="site-title")
-            a(href="/") your logo here
+            a(href="/") RGChat Admin
         div(class="float-right")
           section#login
             ul
-            -if(!everyauth.loggedIn)
+            -if(typeof(user) !== 'undefined')
                 li
                     a(href="/register") Register
                 li
                     a(href="/login") Log in
-                    
+
             -else
-                -if(everyauth.facebook)
-                    li Welcome !{everyauth.facebook.user.first_name} !{everyauth.facebook.user.last_name}!
-                -else if(everyauth.twitter)
-                    li Welcome !{everyauth.twitter.user.name}!
-                -else if(everyauth.password)
-                    li Welcome!
-                li 
+                li
                     a(href="/logout") Logout
           nav
             ul#menu
-              li 
+              li
                 a(href="/") Home
-              li 
+              li
                 a(href="/chat") Chat
               li
                 a(href="/about") About
     #body
         block content
-      
+
     footer
       div(class="content-wrapper")
         div(class="float-left")
-          p &copy; !{(new Date()).getFullYear()}
+          p &copy; 2016, rgchat INC. All rights reserved
         div(class="float-right")
           ul#social
             li

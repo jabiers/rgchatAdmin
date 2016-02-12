@@ -11,5 +11,4 @@
         "publicKey": "{ your recaptcha public key }",
         "privateKey": "{ your recaptcha private key }"
     }
-
 }

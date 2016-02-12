@@ -1,17 +1,17 @@
-module.exports = function (app) {
+var express = require('express');
+var router = express.Router();
+router.get('/', function (req, res) {
+    res.render('index', { title: 'Home Page.  ' })
+});
 
-    // home page
-    app.get('/', function (req, res) {
-        res.render('index', { title: 'Home Page.  ' })
-    });
+// chat area
+router.get('/chat', function (req, res) {
+    res.render('chat', { title: 'Chat with Me!  ' })
+});
 
-    // chat area
-    app.get('/chat', function (req, res) {
-        res.render('chat', { title: 'Chat with Me!  ' })
-    });
+// about page
+router.get('/about', function (req, res) {
+    res.render('about', { title: 'About Me.  ' })
+});
 
-    // about page
-    app.get('/about', function (req, res) {
-        res.render('about', { title: 'About Me.  ' })
-    });
-}
+module.exports = router;
